@@ -1,1 +1,6 @@
-on: push
+on: workflow_dispatch
+jobs:
+  placeholder-job:
+    name: Placeholder job
+    steps:
+    - uses: actions/checkout@v2
