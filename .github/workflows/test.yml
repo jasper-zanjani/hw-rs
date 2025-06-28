@@ -2,5 +2,6 @@ on: workflow_dispatch
 jobs:
   placeholder-job:
     name: Placeholder job
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
