@@ -1,7 +1,13 @@
-on: workflow_dispatch
+on: push
 jobs:
-  placeholder-job:
-    name: Placeholder job
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+    - run: cargo build -r --verbose
+    - run: cargo test --verbose
+    - run: cargo package
+    - uses: actions/upload-artifact@4
+      with:
+        name: hw-rs
+        path: target/release/hw-rs
